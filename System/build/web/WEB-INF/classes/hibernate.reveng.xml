@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="online_appointment"/>
+  <table-filter match-name="appointment"/>
+  <table-filter match-name="jobs"/>
+  <table-filter match-name="country"/>
+  <table-filter match-name="dates"/>
+  <table-filter match-name="type"/>
+  <table-filter match-name="usercountry"/>
+  <table-filter match-name="qualification"/>
+  <table-filter match-name="jobs_has_qualification"/>
+  <table-filter match-name="gender"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="address"/>
+  <table-filter match-name="times_has_user"/>
+  <table-filter match-name="contact"/>
+  <table-filter match-name="times"/>
+</hibernate-reverse-engineering>

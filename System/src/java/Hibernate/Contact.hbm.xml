@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2019 7:46:51 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Contact" table="contact" catalog="online_appointment">
+        <id name="idcontact" type="java.lang.Integer">
+            <column name="idcontact" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="Hibernate.User" fetch="select">
+            <column name="user_uid" not-null="true" />
+        </many-to-one>
+        <property name="mobile" type="string">
+            <column name="mobile" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

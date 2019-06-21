@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2019 7:46:51 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Country" table="country" catalog="online_appointment">
+        <id name="cid" type="java.lang.Integer">
+            <column name="cid" />
+            <generator class="identity" />
+        </id>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <set name="jobses" table="jobs" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="country_cid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Jobs" />
+        </set>
+        <set name="usercountries" table="usercountry" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="country_cid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Usercountry" />
+        </set>
+    </class>
+</hibernate-mapping>

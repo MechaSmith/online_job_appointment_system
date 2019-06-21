@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2019 7:46:51 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Usercountry" table="usercountry" catalog="online_appointment">
+        <id name="iduserCountry" type="java.lang.Integer">
+            <column name="iduserCountry" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="country" class="Hibernate.Country" fetch="select">
+            <column name="country_cid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="Hibernate.User" fetch="select">
+            <column name="user_uid" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

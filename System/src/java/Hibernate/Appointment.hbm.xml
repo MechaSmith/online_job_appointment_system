@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2019 7:46:51 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Appointment" table="appointment" catalog="online_appointment">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobs" class="Hibernate.Jobs" fetch="select">
+            <column name="jobs_idjobs" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userByAdmin" class="Hibernate.User" fetch="select">
+            <column name="admin" not-null="true" />
+        </many-to-one>
+        <many-to-one name="timesHasUser" class="Hibernate.TimesHasUser" fetch="select">
+            <column name="times_has_user_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userByClient" class="Hibernate.User" fetch="select">
+            <column name="client" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="discription" type="string">
+            <column name="discription" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/online_appointment?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">123</property>
+    <mapping resource="Hibernate/Country.hbm.xml"/>
+    <mapping resource="Hibernate/Gender.hbm.xml"/>
+    <mapping resource="Hibernate/Times.hbm.xml"/>
+    <mapping resource="Hibernate/Dates.hbm.xml"/>
+    <mapping resource="Hibernate/Usercountry.hbm.xml"/>
+    <mapping resource="Hibernate/Jobs.hbm.xml"/>
+    <mapping resource="Hibernate/JobsHasQualification.hbm.xml"/>
+    <mapping resource="Hibernate/Type.hbm.xml"/>
+    <mapping resource="Hibernate/TimesHasUser.hbm.xml"/>
+    <mapping resource="Hibernate/Appointment.hbm.xml"/>
+    <mapping resource="Hibernate/Contact.hbm.xml"/>
+    <mapping resource="Hibernate/Qualification.hbm.xml"/>
+    <mapping resource="Hibernate/Address.hbm.xml"/>
+    <mapping resource="Hibernate/User.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

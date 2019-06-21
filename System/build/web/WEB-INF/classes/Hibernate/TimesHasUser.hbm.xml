@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2019 7:46:51 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.TimesHasUser" table="times_has_user" catalog="online_appointment">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="dates" class="Hibernate.Dates" fetch="select">
+            <column name="dates_iddates" not-null="true" />
+        </many-to-one>
+        <many-to-one name="times" class="Hibernate.Times" fetch="select">
+            <column name="times_idtimes" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="Hibernate.User" fetch="select">
+            <column name="user_uid" not-null="true" />
+        </many-to-one>
+        <set name="appointments" table="appointment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="times_has_user_id" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Appointment" />
+        </set>
+    </class>
+</hibernate-mapping>
